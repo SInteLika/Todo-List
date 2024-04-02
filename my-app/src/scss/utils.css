@@ -1,0 +1,15 @@
+.btn {
+  color: var(--textColor);
+  color-cursor: pointer;
+  color-padding: 10px 25px;
+  color-border-radius: 8px;
+  color-background: var(--titleText);
+  color-font-family: Nunito, sans-serif;
+  color-font-size: 16px;
+  color-font-style: normal;
+  color-font-weight: 600;
+  color-line-height: normal;
+  color-letter-spacing: 0.16px;
+}
+
+/*# sourceMappingURL=utils.css.map */

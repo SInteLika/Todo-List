@@ -1,0 +1,60 @@
+.registration
+  background-color: var(--backGround)
+  width: 100%
+  padding: 20px
+  position: relative
+  &-page
+    color: white
+    background-color: var(--backGroundPanel)
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    display: flex
+    flex-direction: column
+    align-items: center
+    box-shadow: 0 10px 25px 0 rgba(29, 52, 54, 0.08)
+    border-radius: 10px
+  &__title
+    margin: 20px 0
+    font-family: 'Nunito', 'sans-serif'
+    font-size: 27px
+    font-style: normal
+    font-weight: 600
+    line-height: normal
+    color: var(--titleText)
+  &-form
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin: 0 20px
+    &__input
+      color: var(--textColor)
+      min-width: 310px
+      padding: 10px 15px
+      margin-bottom: 20px
+      border-radius: 8px
+      border: 1px solid rgba(249, 249, 249, 0.20)
+      background-color: var(--backGroundPanel)
+      transition: border-color 1s ease-out
+      &_error
+        border-color: red
+    &-file
+      margin-bottom: 20px
+    &__btn
+      margin-bottom: 20px
+    &-error
+      font-family: 'Nunito', 'sans-serif'
+      font-size: 18px
+      font-style: normal
+      font-weight: 500
+      line-height: normal
+      margin-top: -12px
+      margin-bottom: 10px
+      color: red
+      transition: all 0.5s ease-out
+      height: 0
+      opacity: 0
+      &_visible
+        height: 25px
+        opacity: 1

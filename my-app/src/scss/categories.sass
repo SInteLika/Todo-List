@@ -1,0 +1,43 @@
+.categories
+  font-family: 'Nunito', 'sans-serif'
+  max-width: 220px
+  &__title
+    color: var(--titleText)
+    font-weight: 600
+    font-size: 24px
+    margin-bottom: 20px
+  &-list-item
+    position: relative
+    cursor: pointer
+    color: var(--textColor)
+    display: flex
+    align-items: center
+    margin-bottom: 30px
+    transition: all 0.6s
+    &:hover
+      padding: 4px
+    &_active
+      &:hover
+        padding: 0
+        background-color: var(--backGroundPanel)
+        
+      &:after
+        content: url("../img/categories/Active.svg")
+        position: absolute
+        right: -20px
+        top: 0
+    &__icon
+      margin-right: 10px
+      max-width: 18px
+      max-height: 18px
+  &-add
+    cursor: pointer
+    display: flex
+    align-items: center
+    color: var(--titleText)
+    margin-bottom: 60px
+    &__icon
+      margin-right: 10px
+
+
+

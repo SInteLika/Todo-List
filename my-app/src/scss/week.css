@@ -1,0 +1,10 @@
+.week {
+  padding: 20px;
+  margin-bottom: 30px;
+}
+.week-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+/*# sourceMappingURL=week.css.map */

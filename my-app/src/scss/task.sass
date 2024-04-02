@@ -1,0 +1,75 @@
+.page-task
+  background-color: var(--backGroundPanel)
+  padding: 23px
+  box-shadow: 0 10px 25px 0 rgba(29, 52, 54, 0.08)
+  transition: background-color linear 0.5s
+  &-active
+    margin-bottom: 20px
+  &-header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    &__title
+      color: var(--titleText)
+      font-family: 'Nunito', sans-serif
+      font-weight: 600
+      font-size: 23px
+      line-height: 25px
+      margin-bottom: 20px
+  &-list
+    margin-bottom: 20px
+    &-item
+      cursor: pointer
+      padding: 15px
+      background: var(--backGroundPanel)
+      border: 1px solid var(--borderTask)
+      border-radius: 10px
+      margin-bottom: 10px
+      display: flex
+      align-items: center
+      justify-content: space-between
+      transition: all 0.5s ease
+      height: 1em
+      &_remove
+        height: 0
+        padding: 0
+        opacity: 0
+
+
+      &-text
+        display: flex
+        align-items: center
+        &__icon
+          position: absolute
+        &__text
+          position: relative
+          top: 2px
+          font-family: 'Nunito', sans-serif
+          font-style: normal
+          font-weight: 400
+          font-size: 18px
+          line-height: 19px
+          transition: all 0.5s linear
+          &_active
+            transform: translate(30px)
+        &_crossed
+          text-decoration: line-through
+      &-tools
+        display: flex
+        align-items: center
+        &__edit
+          padding: 5px
+          margin-right: 5px
+        &__delete
+          padding: 5px
+      &_inActive
+        visibility: hidden
+        opacity: 0
+        transition: all 0.7s ease-out
+      &_active
+        visibility: visible
+        opacity: 1
+
+
+
+

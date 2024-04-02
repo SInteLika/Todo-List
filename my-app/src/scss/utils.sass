@@ -1,0 +1,31 @@
+.btn
+  color: var(--textColor)
+  cursor: pointer
+  padding: 10px 25px
+  border-radius: 8px
+  background: var(--titleText)
+  font-family: Nunito, sans-serif
+  font-size: 16px
+  font-style: normal
+  font-weight: 600
+  line-height: normal
+  letter-spacing: 0.16px
+.alert
+  top: 50%
+  z-index: 3
+  position: fixed
+  font-family: 'Nunito', 'sans-serif'
+  background-color: var(--backGroundPanel)
+  color: var(--textColor)
+  left: 50%
+  transform: translate(-50%, -50%)
+  box-shadow: 0 10px 25px 0 rgba(29, 52, 54, 0.08)
+  border: var(--textColor) 1px solid
+  border-radius: 10px
+  padding: 35px
+  opacity: 0
+  transition: all 1s ease
+  visibility: hidden
+  &_active
+    visibility: visible
+    opacity: 1

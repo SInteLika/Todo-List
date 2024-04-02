@@ -1,0 +1,18 @@
+html[data-theme='dark'] {
+    --backGround: #222831;
+    --backGroundPanel: #2C3440;
+    --titleText: #29A19C;
+    --textColor: #F9F9F9;
+    --borderTask: rgba(249, 249, 249, 0.20);
+}
+
+html[data-theme='light'] {
+    --backGround: #FAFAFA;
+    --backGroundPanel: #FFFFFF;
+    --titleText: #29A19C;
+    --textColor: #282846;
+    --borderTask: rgba(40, 40, 70, 0.10);
+}
+
+
+

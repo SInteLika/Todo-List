@@ -1,0 +1,17 @@
+.page-chart {
+  background-color: #2C3440;
+  padding: 23px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.page-chart__title {
+  color: #29A19C;
+  font-family: "Nunito", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 25px;
+  margin-bottom: 26px;
+}
+
+/*# sourceMappingURL=chart.css.map */

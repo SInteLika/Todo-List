@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/woff2/Nunito-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/woff2/Nunito-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/woff2/Nunito-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/woff/Nunito-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/woff/Nunito-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/woff/Nunito-SemiBold.woff") format("woff");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/woff2/Montserrat-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/woff2/Montserrat-SemiBold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/woff/Montserrat-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/woff/Montserrat-SemiBold.woff") format("woff");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/woff2/Roboto-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: normal;
+  @font-face {
+    font-family: "Roboto";
+    src: url("../fonts/woff/Roboto-Regular.woff") format("woff");
+    font-style: normal;
+    font-weight: normal;
+  }
+}
+
+/*# sourceMappingURL=fonts.css.map */
