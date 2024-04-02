@@ -1,2 +1,2 @@
 
-export const serverPhotoURL = 'http://localhost:4443/uploads/'
+export const serverPhotoURL = 'https://todo-list-backend-4kat.onrender.com/uploads/'
