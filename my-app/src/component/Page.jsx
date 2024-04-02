@@ -12,7 +12,7 @@ import ChangeTask from "./MainPage/Page/Task/ChangeTask/ChangeTask";
 export default function Page() {
     const status = useSelector(state => state.auth.status)
     const token = window.localStorage.getItem('token')
-    document.documentElement.dataset.theme = useSelector(state => state.auth.data.theme)
+    document.documentElement.dataset.theme = useSelector(state => state.auth.data.theme) || 'dark'
     if (!token || status === 'err') {
         return <Navigate to={'/login'}/>
     }
