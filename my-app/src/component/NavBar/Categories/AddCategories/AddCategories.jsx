@@ -3,7 +3,13 @@ import LogoSvgCategories from "../LogoSvgCategories";
 import ChoiceIcon from "./ChoiceIcon";
 import instance from "../../../../utils/axios";
 import {useDispatch, useSelector} from "react-redux";
-import {addCategories, changeVisible} from "../../../../redux/slices/categoriesSlice";
+import {
+    addCategories,
+    changeActiveCategories,
+    changeVisible,
+    getCategories
+} from "../../../../redux/slices/categoriesSlice";
+import {getTask} from "../../../../redux/slices/taskSlice";
 
 export default function AddCategories(props) {
     const [icon, setIcon] = useState('Home')
@@ -18,6 +24,7 @@ export default function AddCategories(props) {
         if(data){
             dispatch(addCategories(data))
             setText('')
+            dispatch(getCategories())
         }
     }
 

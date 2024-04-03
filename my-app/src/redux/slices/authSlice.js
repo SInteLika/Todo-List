@@ -15,6 +15,9 @@ export const fetchLogin = createAsyncThunk('auth/fetchLogin',
 
 export const authMe = createAsyncThunk('auth/authMe',
     async() => {
+        if(!window.localStorage.getItem('token')){
+            return false
+        }
         const {data} = await instance.get('auth/me')
         return data
     }
@@ -66,7 +69,7 @@ export const authSlice = createSlice({
             })
             .addCase(authMe.rejected, (state, action) => {
                 state.status = 'err'
-                console.log('Была ошибка')
+                console.log('Пользователь не найден')
             })
     }
 })

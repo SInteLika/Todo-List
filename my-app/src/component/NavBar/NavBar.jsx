@@ -29,17 +29,7 @@ export default function NavBar(props){
 
             <Categories/>
 
-            <div className={'navbar-data'}>
-                <div className={'navbar-data__title'}>Данные</div>
-                <div className={'navbar-data-item'}>
-                    <StatisticsLogo className={'navbar-data-item__logo svgColor' } />
-                    <div className={'navbar-data-item__text'}>Статистика</div>
-                </div>
-                <div className={'navbar-data-item'}>
-                    <ArrowLogo className={'navbar-data-item__logo svgColor'} />
-                    <div className={'navbar-data-item__text'}>Сравнить</div>
-                </div>
-            </div>
+
 
             <div onClick={exit} className={'navbar-logOut'}>
                 <LogOut className={'navbar-logOut__logo svgColor'} />

@@ -7,6 +7,7 @@ import BlackOutPage from "./UtilsComponent/BlackOutPage";
 import AddTask from "./MainPage/Page/Task/AddTask/AddTask";
 import DeleteTask from "./MainPage/Page/Task/DeleteTask/DeleteTask";
 import ChangeTask from "./MainPage/Page/Task/ChangeTask/ChangeTask";
+import RemoveCategoriesAlert from "./NavBar/Categories/RemoveCategories/RemoveCategoriesAlert/RemoveCategoriesAlert";
 
 
 export default function Page() {
@@ -23,6 +24,7 @@ export default function Page() {
             <MainPage/>
             <AddCategories/>
             <AddTask/>
+            <RemoveCategoriesAlert/>
             <BlackOutPage />
             <DeleteTask />
             <ChangeTask />

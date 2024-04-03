@@ -106,25 +106,8 @@ export default function Task() {
                             </div>
                             : taskFulfilled.map((e, index) => {
                                 return (
-                                    <div key={e._id} className="page-task-list-item"
-                                         onClick={(event) => {
-                                             dispatch(changeVisibleIcon({
-                                                 task: 'taskFulfilled',
-                                                 _id: e._id
-                                             }))
-                                             if (elemRef.current.id !== e._id) {
-                                                 elemRef.current.elem = event.currentTarget
-                                                 elemRef.current.id = e._id
-                                                 elemRef.current.task = 'taskFulfilled'
-                                             } else {
-                                                 elemRef.current.elem = null
-                                                 elemRef.current.id = null
-                                                 elemRef.current.task = null
-                                             }
-                                         }
-                                         }>
+                                    <div key={e._id} className="page-task-list-item">
                                         <div className="page-task-list-item-text">
-                                            <FulfilledTaskIcon id={e._id} isActiveTask={false} isActive={e.isActive}/>
                                             <div className={`
                                             page-task-list-item-text__text
                                             page-task-list-item-text_crossed

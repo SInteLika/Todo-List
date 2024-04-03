@@ -2,20 +2,19 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 import instance from "../../utils/axios";
 
 
-
 export const getCategories = createAsyncThunk('categories/getCategories',
-    async() => {
+    async () => {
         const {data} = await instance.get('/categories')
         return data
     }
 )
 
 
-
 const initialState = {
-    list : [],
+    list: [],
     status: 'loading',
     isVisible: false,
+    isVisibleDelCategories: false,
     activeCategories: {}
 }
 
@@ -32,7 +31,10 @@ export const categoriesSlice = createSlice({
         },
         changeActiveCategories: (state, action) => {
             state.activeCategories = action.payload
-        }
+        },
+        changeDelCategoriesVisible: (state) => {
+            state.isVisibleDelCategories = !state.isVisibleDelCategories
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -41,8 +43,8 @@ export const categoriesSlice = createSlice({
             })
             .addCase(getCategories.fulfilled, (state, action) => {
                 state.list = action.payload
-                    .map( (e, index) => {
-                        if(index === 0) {
+                    .map((e, index) => {
+                        if (index === 0) {
                             e.active = true
                             state.activeCategories = e
                         } else e.active = false
@@ -59,6 +61,7 @@ export const categoriesSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { addCategories, changeVisible, changeActiveCategories } = categoriesSlice.actions
+export const {addCategories, changeVisible, changeActiveCategories,
+    changeDelCategoriesVisible} = categoriesSlice.actions
 
 export default categoriesSlice.reducer

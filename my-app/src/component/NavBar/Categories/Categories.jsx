@@ -4,6 +4,7 @@ import LogoSvgCategories from "./LogoSvgCategories";
 import {changeActiveCategories, changeVisible, getCategories} from "../../../redux/slices/categoriesSlice";
 import {useEffect} from "react";
 import {getTask} from "../../../redux/slices/taskSlice";
+import RemoveCategories from "./RemoveCategories/RemoveCategories";
 
 export default function Categories(props) {
     const dispatch = useDispatch()
@@ -55,6 +56,7 @@ export default function Categories(props) {
                 <img className={'categories-add__icon'} src={add} alt=""/>
                 <div>Добавить</div>
             </div>
+            <RemoveCategories/>
         </div>
     )
 }
