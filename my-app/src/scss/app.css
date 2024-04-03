@@ -11,7 +11,7 @@ body {
 
 @font-face {
   font-family: "Nunito";
-  src: url("../fonts/Nunito-Regular.ttf") format("ttf");
+  src: url("src/fonts/Nunito-Regular.ttf") format("ttf");
   font-style: normal;
   font-weight: normal;
 }
