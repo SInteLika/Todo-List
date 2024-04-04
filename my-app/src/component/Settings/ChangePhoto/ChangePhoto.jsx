@@ -3,6 +3,7 @@ import {useState} from "react";
 import instance from "../../../utils/axios";
 import {updatePhoto} from "../../../redux/slices/authSlice";
 import {useDispatch} from "react-redux";
+import {serverPhotoURL} from "../../../utils/link";
 
 
 export default function ChangePhoto(props) {
@@ -14,7 +15,7 @@ export default function ChangePhoto(props) {
             avatarUrl = image
         } else {
             const formData = new FormData()
-            formData.append('image', image, user.email + '.png')
+            formData.append('image', image, Date.now().toString() + props.id + '.png')
             const {data} = await instance.post('upload', formData)
             avatarUrl = data.url
         }
@@ -22,6 +23,7 @@ export default function ChangePhoto(props) {
             avatarUrl
         })
         dispatch(updatePhoto(avatarUrl))
+        props.setPhoto(serverPhotoURL + avatarUrl)
 
         props.setIsAnim(false)
         setTimeout(() => props.setIsVisible(false), 800)

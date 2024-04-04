@@ -4,7 +4,7 @@ import {useForm} from "react-hook-form";
 import {useState} from "react";
 import instance from "../../utils/axios";
 import getNextMonday from "../../utils/getNextMonday";
-import {Navigate} from "react-router-dom";
+import {Navigate, NavLink} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {registration} from "../../redux/slices/authSlice";
 
@@ -57,10 +57,10 @@ export default function Registration() {
 
     return (
         <div className={'registration'}>
-            <div className={'login-logo'}>
+            <NavLink to={'/'} className={'login-logo'}>
                 <img className={'login-logo__mainLogo'} src={mainLogo} alt=""/>
                 <div className={'login-logo__title'}>Tasks Book</div>
-            </div>
+            </NavLink>
 
             <div className="registration-page">
                 <div className="registration__title">Регистрация</div>

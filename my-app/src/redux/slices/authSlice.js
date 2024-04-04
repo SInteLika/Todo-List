@@ -3,19 +3,23 @@ import instance from "../../utils/axios";
 
 
 export const fetchLogin = createAsyncThunk('auth/fetchLogin',
-    async(params) => {
-        const {email, password} = params
-        const {data} = await instance.post('auth/login', {
-            email,
-            password,
-        })
-        return data
+    async (params, {rejectWithValue}) => {
+        try {
+            const {email, password} = params
+            const {data} = await instance.post('auth/login', {
+                email,
+                password,
+            })
+            return data
+        } catch (err) {
+            return rejectWithValue(err)
+        }
     }
 )
 
 export const authMe = createAsyncThunk('auth/authMe',
-    async() => {
-        if(!window.localStorage.getItem('token')){
+    async () => {
+        if (!window.localStorage.getItem('token')) {
             return false
         }
         const {data} = await instance.get('auth/me')
@@ -26,7 +30,8 @@ export const authMe = createAsyncThunk('auth/authMe',
 
 const initialState = {
     data: null,
-    status: 'loading'
+    status: 'loading',
+    error: false
 }
 export const authSlice = createSlice({
     name: 'auth',
@@ -55,10 +60,11 @@ export const authSlice = createSlice({
         builder
             .addCase(fetchLogin.fulfilled, (state, action) => {
                 state.data = action.payload
+                state.error = false
                 state.status = 'ok'
             })
             .addCase(fetchLogin.rejected, (state, action) => {
-                console.log('Была ошибка')
+                state.error = true
             })
             .addCase(authMe.pending, (state, action) => {
                 state.status = 'loading'

@@ -53,6 +53,10 @@ export const taskSlice = createSlice({
         },
         fulfilledTask: (state, action) => {
             state.taskFulfilled.push(action.payload)
+        },
+        clearAllTask: (state, action) => {
+            state.taskActive = []
+            state.taskFulfilled = []
         }
     },
     extraReducers: (builder) => {
@@ -74,6 +78,6 @@ export const taskSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const {changeVisibleAddTask, addActiveTask, changeVisibleIcon, changeVisibleDelTask,
-    changeSelectTask, delTask, changeVisibleChangeTask, updateTask, fulfilledTask } = taskSlice.actions
+    changeSelectTask, delTask, changeVisibleChangeTask, updateTask, fulfilledTask, clearAllTask } = taskSlice.actions
 
 export default taskSlice.reducer

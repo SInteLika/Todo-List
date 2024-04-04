@@ -8,7 +8,8 @@ import instance from "../../utils/axios";
 export default function Login() {
     const dispatch = useDispatch()
     const data = useSelector(state => state.auth.data)
-    const {register, handleSubmit} = useForm()
+    const error = useSelector(state => state.auth.error)
+    const {register, handleSubmit, formState: {errors}} = useForm()
     function submit(data){
         dispatch(fetchLogin({
             email: data.email,
@@ -38,6 +39,7 @@ export default function Login() {
                            className={"login-form__input"} placeholder={'Email'}/>
                     <input {...register('password')} type="password"
                            className={"login-form__input"} placeholder={'Пароль'}/>
+                    {error && <div className="login-form__error">Не верный логин или пароль</div>}
                     <button type={'submit'} className={'login-form__btn'}>Отправить</button>
                 </form>
 

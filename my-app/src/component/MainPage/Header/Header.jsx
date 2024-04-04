@@ -5,11 +5,13 @@ import {changeVisibleAddTask} from "../../../redux/slices/taskSlice";
 import instance from "../../../utils/axios";
 import {updateTheme} from "../../../redux/slices/authSlice";
 import LogoSvgCategories from "../../NavBar/Categories/LogoSvgCategories";
+import {changeVisible} from "../../../redux/slices/categoriesSlice";
 
 
 export default function Header(props) {
     const dispatch = useDispatch()
     let theme = useSelector(state => state.auth.data.theme)
+    let activeCategories = useSelector(state => state.categories.activeCategories)
 
     async function changeTheme() {
         theme = theme === 'dark' ? 'light' : 'dark'
@@ -23,7 +25,10 @@ export default function Header(props) {
 
     return (
         <div className={'header'}>
-            <div onClick={() => dispatch(changeVisibleAddTask())} className="header-btn">
+            <div onClick={() => {
+                activeCategories._id ? dispatch(changeVisibleAddTask()) :dispatch(changeVisible())
+
+            }} className="header-btn">
                 <img src={plus} alt="" className="header-btn__icon"/>
                 <div className="header-btn__text">Новая задача</div>
             </div>

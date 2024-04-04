@@ -12,7 +12,8 @@ export default function Settings() {
     const navigate = useNavigate()
     const [isVisible, setIsVisible] = useState(false)
     const [isAnim, setIsAnim] = useState(false)
-    const {email, fullName, avatarUrl} = useSelector(state => state.auth.data)
+    const {email, fullName, avatarUrl, _id} = useSelector(state => state.auth.data)
+    const [photo, setPhoto] = useState(serverPhotoURL + avatarUrl)
 
     return (
         <div className={'settings'}>
@@ -24,7 +25,7 @@ export default function Settings() {
                 <div className="settings__title">Настройки</div>
                 <div className="settings-wrapper">
                     <div className="settings-photo">
-                        <img src={serverPhotoURL + avatarUrl} alt="" className="settings-photo__img"/>
+                        <img src={photo} alt="" className="settings-photo__img"/>
                         <div className="settings-photo__change"
                              onClick={() => {
                                  if (isVisible) {
@@ -43,7 +44,10 @@ export default function Settings() {
                         <ChangeEmail email={email}/>
                         <ChangePassword/>
                         <ChangePhoto isVisible={isVisible} setIsVisible={setIsVisible}
-                                     isAnim={isAnim} setIsAnim={setIsAnim}/>
+                                     isAnim={isAnim} setIsAnim={setIsAnim} id={_id}
+                                     setPhoto={setPhoto}
+
+                        />
 
                     </div>
                 </div>

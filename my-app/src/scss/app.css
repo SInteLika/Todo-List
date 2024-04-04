@@ -9,6 +9,10 @@ body {
   display: flex;
 }
 
+a {
+  text-decoration: none;
+}
+
 .btn {
   color: var(--textColor);
   cursor: pointer;
@@ -638,6 +642,10 @@ body {
   font-weight: 600;
   line-height: normal;
   letter-spacing: 0.16px;
+}
+.login-form__error {
+  margin-bottom: 20px;
+  color: red;
 }
 .login__newAccount {
   margin-bottom: 20px;

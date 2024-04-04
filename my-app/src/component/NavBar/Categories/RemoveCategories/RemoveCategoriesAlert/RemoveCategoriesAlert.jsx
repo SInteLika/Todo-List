@@ -1,10 +1,15 @@
 import {useDispatch, useSelector} from "react-redux";
-import {changeVisibleDelTask, delTask} from "../../../../../redux/slices/taskSlice";
+import {changeVisibleDelTask, clearAllTask, delTask} from "../../../../../redux/slices/taskSlice";
 import instance from "../../../../../utils/axios";
 import getNextMonday from "../../../../../utils/getNextMonday";
 import {updateStatistics} from "../../../../../redux/slices/statisticsSlice";
 import {logOut} from "../../../../../redux/slices/authSlice";
-import {addCategories, changeDelCategoriesVisible, getCategories} from "../../../../../redux/slices/categoriesSlice";
+import {
+    addCategories,
+    changeActiveCategories,
+    changeDelCategoriesVisible,
+    getCategories
+} from "../../../../../redux/slices/categoriesSlice";
 
 export default function RemoveCategoriesAlert(props) {
     const dispatch = useDispatch()
@@ -12,9 +17,10 @@ export default function RemoveCategoriesAlert(props) {
     const activeCategories = useSelector(state => state.categories.activeCategories)
 
     async function delCat(){
-        console.log(activeCategories)
         const {data} = await instance.delete(`categories/${activeCategories._id}`)
         if(data){
+            dispatch(clearAllTask())
+            dispatch(changeActiveCategories({}))
             dispatch(changeDelCategoriesVisible())
             dispatch(getCategories())
         }
