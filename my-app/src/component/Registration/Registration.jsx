@@ -70,7 +70,7 @@ export default function Registration() {
                         {
                             required: 'Введите почту'
                         })}
-                           type="text"
+                           type="email"
                            className={
                                errors.email
                                    ? 'registration-form__input registration-form__input_error'
@@ -88,7 +88,11 @@ export default function Registration() {
 
                     <input
                         {...register('userName', {
-                            required: 'Введите имя'
+                            required: 'Введите имя',
+                            minLength: {
+                                value: 2,
+                                message: 'Укажите имя(не менее 2-х букв)'
+                            }
                         })}
                         type="text"
                         className={
